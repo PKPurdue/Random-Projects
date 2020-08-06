@@ -1,0 +1,10 @@
+/*
+This extension currently:
+-Changes theme/look of catalog
+-Shows 'value' of items on item page and fixed description cutoff
+-Shows number of sales on all items
+-Shows 'value' of items in trades
+-Shows 'value' of items on profile, next to RAP, overriding CSS style and spacing properly depending on number
+-Correctly orders forum posts when searching
+-Blocks rbxleaks in case I click it on twitter
+*/

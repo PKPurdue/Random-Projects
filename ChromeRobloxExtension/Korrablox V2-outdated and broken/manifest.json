@@ -1,0 +1,46 @@
+{
+	
+"manifest_version": 2,
+    
+	"name": "Korrablox",
+    
+	"description": "Me testing chrome extensions",
+    
+	"version": "1.0",
+    
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"content_scripts": 
+	[
+       
+		{
+            
+			"matches": [
+"*://*/*"
+],
+            
+			"js": ["blockedSites.js"
+],
+            
+			"run_at": "document_start"
+        
+		}
+,  
+		{
+            
+			"matches": [
+"*://*/*"
+],
+            
+			"js": ["jquery.js", "Pages/catalog.js", "Pages/item.js", "Pages/trade.js", "Pages/games.js", "Pages/reddit.js", "content.js"
+],
+            
+			"run_at": "document_end"
+        
+		}
+
+	]
+,
+	"permissions":["contextMenus", "tabs", "storage"]
+}

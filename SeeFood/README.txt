@@ -1,0 +1,1 @@
+SeeFood is an image classifier named after SeeFood in the show Silicon Valley. It is a basic image classifier. Almost the entirety of that code was not written by me, though the owl images for the classifying were retrieved by me.
