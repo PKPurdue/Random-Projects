@@ -1,4 +1,5 @@
 import os, shutil, time
+from PIL import Image
 
 currentPath = os.getcwd()
 
@@ -25,3 +26,17 @@ def deleteFolder(folderName):
         time.sleep(3)
     except OSError:
         print("Deletion of the directory " + folderName + " failed")
+
+def saveCroppedImage(image, imageName, coordinates, allowance):
+    x, y, w, h = coordinates
+    x = max(0, int(x - (w * (allowance - 1) / 2)))
+    y = max(0, int(y - (h * (allowance - 1) / 2)))
+    w *= allowance
+    h *= allowance
+    height, width, c = image.shape
+    w = min(w, width - x)
+    h = min(h, height - y)
+    croppedImage = Image.fromarray(image, 'RGB').crop((x, y, x + w, y + h))
+
+    croppedImage.save(imageName, quality=95)
+    print("Saving image")
